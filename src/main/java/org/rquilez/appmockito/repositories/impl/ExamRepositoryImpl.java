@@ -1,5 +1,6 @@
 package org.rquilez.appmockito.repositories.impl;
 
+import org.rquilez.appmockito.DataMock;
 import org.rquilez.appmockito.models.Exam;
 import org.rquilez.appmockito.repositories.ExamRepository;
 
@@ -10,7 +11,13 @@ public class ExamRepositoryImpl implements ExamRepository {
 
     @Override
     public List<Exam> findAll() {
-        return Arrays.asList(new Exam(5L, "Maths"), new Exam(6L, "Language"),
-                new Exam(7L, "History"));
+        System.out.println("ExamRepositoryImpl.findAll");
+        return DataMock.EXAMS_LIST;
+    }
+
+    @Override
+    public Exam save(Exam exam) {
+        System.out.println("ExamRepositoryImpl.save");
+        return DataMock.EXAM;
     }
 }

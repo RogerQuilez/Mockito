@@ -35,4 +35,13 @@ public class ExamServiceImpl implements ExamService {
         }
         return optionalExam.orElseThrow();
     }
+
+    @Override
+    public Exam save(Exam exam) {
+        if (!exam.getAnswers().isEmpty()) {
+            answerRepository.saveAll(exam.getAnswers());
+        }
+        return repository.save(exam);
+    }
+
 }

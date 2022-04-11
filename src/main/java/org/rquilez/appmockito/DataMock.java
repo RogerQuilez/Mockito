@@ -1,4 +1,4 @@
-package org.rquilez.appmockito.services.impl;
+package org.rquilez.appmockito;
 
 import org.rquilez.appmockito.models.Exam;
 
